@@ -3,6 +3,13 @@ import { shade } from 'polished';
 
 import signInBackgroundImg from '../../assets/sign-in-background.jpg';
 
+// #EDEBD7 text
+// #2D242B input
+// #FF9000 button
+// #4B3B47 background
+// #FF595E fail
+// #11A777 success
+
 export const Container = styled.div`
   height: 100vh;
 
@@ -37,15 +44,15 @@ export const Content = styled.div`
     }
 
     input {
-      background: #232129;
-      color: #f4ede8;
+      background: #2d242b;
+      color: #edebd7;
       border-radius: 10px;
-      border: 2px solid #232129;
+      border: 2px solid #2d242b;
       padding: 16px;
       width: 100%;
 
       &::placeholder {
-        color: #666360;
+        color: #a78682;
       }
 
       & + input {
@@ -55,7 +62,7 @@ export const Content = styled.div`
 
     button {
       background: #ff9000;
-      color: #312e38;
+      color: #2d242b;
       border-radius: 10px;
       border: 0;
       padding: 0 16px;
