@@ -6,7 +6,7 @@ import signInBackgroundImg from '../../assets/sign-in-background.jpg';
 // #2D242B input
 // #FF9000 button
 // #4B3B47 background
-// #FF595E fail
+// #FF595E fail #c53030
 // #11A777 success
 
 export const Container = styled.div`
