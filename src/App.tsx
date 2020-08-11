@@ -1,15 +1,20 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import GlobalStyle from './styles/global';
 
-// import SignIn from './pages/SignIn';
-import ForceUpdatePassword from './pages/ForceUpdatePassword';
+import Routes from './routes';
+
+import AppProvider from './hooks';
 
 const App: React.FC = () => (
-  <>
-    <ForceUpdatePassword />
+  <BrowserRouter>
+    <AppProvider>
+      <Routes />
+    </AppProvider>
+
     <GlobalStyle />
-  </>
+  </BrowserRouter>
 );
 
 export default App;
