@@ -5,11 +5,12 @@ import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { Link, useHistory } from 'react-router-dom';
 
+import SplashPage from '../../components/SplashPage';
 import logoImg from '../../assets/logo.svg';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import getValidationErrors from '../../utils/getValidationErrors';
-import { Background, Container, ContentContainer, Content } from './styles';
+import { Container, Content } from './styles';
 import { useAuth } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
 
@@ -58,8 +59,7 @@ const SignIn: React.FC = () => {
         addToast({
           type: 'error',
           title: 'Erro na autenticação',
-          description:
-            'Verifique o nome de usuário e a senha e tente novamente',
+          description: `Verifique o nome de usuário e a senha e tente novamente`,
         });
       }
     },
@@ -67,8 +67,8 @@ const SignIn: React.FC = () => {
   );
 
   return (
-    <Container>
-      <ContentContainer>
+    <SplashPage>
+      <Container>
         <Content>
           <img src={logoImg} alt="geHos" />
           <Form ref={formRef} onSubmit={handleSubmit}>
@@ -89,12 +89,11 @@ const SignIn: React.FC = () => {
               <FiLogIn size={20} />
               Entrar
             </Button>
-            <Link to="/password/forgot">Esqueci minha senha</Link>
+            <Link to="/password-reset">Esqueci minha senha</Link>
           </Form>
         </Content>
-      </ContentContainer>
-      <Background />
-    </Container>
+      </Container>
+    </SplashPage>
   );
 };
 

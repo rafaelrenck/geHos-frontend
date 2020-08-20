@@ -9,10 +9,10 @@ interface ContainerProps {
 }
 
 export const Container = styled.div<ContainerProps>`
-  background: #2c2f48;
-  color: #535362;
+  background: #272a3c;
+  color: #7B7D8A;
   border-radius: 24px;
-  border: 2px solid #2c2f48;
+  border: 2px solid #272a3c;
   padding: 16px;
   width: 100%;
   height: 48px;
@@ -25,23 +25,23 @@ export const Container = styled.div<ContainerProps>`
   }
 
   ${props =>
-    props.isErrored &&
+    props.isFilled &&
     css`
-      border-color: #c53030;
+      color: #00cd69;
+      border-color: #272a3c;
     `}
 
   ${props =>
     props.isFocused &&
     css`
-      color: #00a3d9;
-      border-color: #00a3d9;
+      color: #00cd69;
+      border-color: #00cd69;
     `}
 
   ${props =>
-    props.isFilled &&
+    props.isErrored &&
     css`
-      color: #00a3d9;
-      border-color: #2c2f48;
+      border-color: #c53030;
     `}
 
   input {
@@ -51,7 +51,7 @@ export const Container = styled.div<ContainerProps>`
     color: #fff;
 
     &::placeholder {
-      color: #535362;
+      color: #7B7D8A;
     }
   }
 
