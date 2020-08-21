@@ -3,13 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.div`
   position: relative;
 
-  span {
-    width: 160px;
+  div {
+    width: max-content;
+    max-width: 300px;
     background: #2a50e5;
     padding: 8px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
+    border-radius: 6px;
     opacity: 0;
     transition: opacity 0.4s;
     visibility: hidden;
@@ -18,7 +17,17 @@ export const Container = styled.div`
     bottom: calc(100% + 12px);
     left: 20%;
     transform: translateX(-20%);
-    color: #2d242b;
+    color: #fff;
+
+    strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    span {
+      font-size: 13px;
+      font-weight: 400;
+    }
 
     &::before {
       content: '';
@@ -32,7 +41,7 @@ export const Container = styled.div`
     }
   }
 
-  &:hover span {
+  &:hover div {
     opacity: 1;
     visibility: visible;
   }

@@ -27,10 +27,14 @@ const appearFromRight = keyframes`
 `;
 
 export const Content = styled.div`
-  width: 320px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   animation: ${appearFromRight} 1s;
 
   form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,21 +44,25 @@ export const Content = styled.div`
       font-size: 28px;
     }
 
+    button {
+      margin-bottom: 24px;
+    }
+
     a {
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      margin-top: 24px;
       text-decoration: none;
       transition: color 0.2s;
+      line-height: 20px;
 
       &:hover {
         color: ${shade(0.2, '#fff')};
       }
 
       > svg {
-        margin: 0 8px;
+        margin: 0 4px;
       }
     }
   }

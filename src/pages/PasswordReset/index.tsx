@@ -1,11 +1,18 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { FiSend, FiUser, FiMail, FiArrowLeft } from 'react-icons/fi';
+import {
+  FiSend,
+  FiUser,
+  FiMail,
+  FiArrowLeft,
+  FiHelpCircle,
+} from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { Link, useHistory } from 'react-router-dom';
 
 import SplashPage from '../../components/SplashPage';
+import Line from '../../components/Line';
 import logoImg from '../../assets/logo.svg';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -13,6 +20,8 @@ import getValidationErrors from '../../utils/getValidationErrors';
 import { Container, Content } from '../SignIn/styles';
 import { useToast } from '../../hooks/toast';
 import api from '../../services/api';
+
+import Tooltip from '../../components/Tooltip';
 
 interface PasswordResetFormData {
   username: string;
@@ -104,10 +113,18 @@ const PasswordReset: React.FC = () => {
               <FiSend size={20} />
               Enviar
             </Button>
-            <Link to="/">
-              <FiArrowLeft size={20} />
-              Voltar para a página de Login
-            </Link>
+            <Line>
+              <Link to="/">
+                <FiArrowLeft size={20} />
+                Voltar para a página de Login
+              </Link>
+              <Tooltip
+                title="Solicite a redefinição da sua senha"
+                message="Preencha o formulário com seus dados para receber no seu e-mail uma nova senha temporária. Se você não possui um e-mail cadastrado, entre em contato com o Departamento de TI"
+              >
+                <FiHelpCircle size={20} />
+              </Tooltip>
+            </Line>
           </Form>
         </Content>
       </Container>

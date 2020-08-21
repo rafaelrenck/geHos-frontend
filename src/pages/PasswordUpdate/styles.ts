@@ -1,7 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 
-import signInBackgroundImg from '../../assets/bg-password.png';
-
 export const Container = styled.div`
   height: 100vh;
   display: flex;
@@ -17,7 +15,6 @@ export const ContentContainer = styled.div`
 `;
 
 export const Background = styled.div`
-  background: url(${signInBackgroundImg}) no-repeat top center;
   background-size: cover;
   border-radius: 24px 0 0 24px;
   flex: 1 1 600px;

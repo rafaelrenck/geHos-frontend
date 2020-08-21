@@ -1,11 +1,12 @@
 import React, { useCallback, useRef } from 'react';
-import { FiLogIn, FiUser, FiLock } from 'react-icons/fi';
+import { FiLogIn, FiUser, FiLock, FiHelpCircle } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { Link, useHistory } from 'react-router-dom';
 
 import SplashPage from '../../components/SplashPage';
+import Line from '../../components/Line';
 import logoImg from '../../assets/logo.svg';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -13,6 +14,7 @@ import getValidationErrors from '../../utils/getValidationErrors';
 import { Container, Content } from './styles';
 import { useAuth } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
+import Tooltip from '../../components/Tooltip';
 
 interface SignInFormData {
   username: string;
@@ -89,7 +91,15 @@ const SignIn: React.FC = () => {
               <FiLogIn size={20} />
               Entrar
             </Button>
-            <Link to="/password-reset">Esqueci minha senha</Link>
+            <Line>
+              <Link to="/password-reset">Esqueci minha senha</Link>
+              <Tooltip
+                title="Identifique-se"
+                message="Preencha o formulário com seus dados para acessar o sistema. Se ainda não possui as credenciais, entre em contato com o Departamento de TI"
+              >
+                <FiHelpCircle size={20} />
+              </Tooltip>
+            </Line>
           </Form>
         </Content>
       </Container>
