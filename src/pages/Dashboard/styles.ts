@@ -17,6 +17,10 @@ const appearFromRight = keyframes`
   }
 `;
 
+export const Header = styled.div`
+  animation: ${appearFromRight} 1s;
+`;
+
 export const Content = styled.div`
   animation: ${appearFromRight} 1s;
 `;

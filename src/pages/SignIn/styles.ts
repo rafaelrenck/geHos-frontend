@@ -1,6 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
 
+import Line from '../../components/Line';
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -66,4 +68,8 @@ export const Content = styled.div`
       }
     }
   }
+`;
+
+export const EditedLine = styled(Line)`
+  padding: 0 18px;
 `;

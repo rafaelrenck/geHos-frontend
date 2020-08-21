@@ -5,9 +5,9 @@ import { Container, Content } from './styles';
 
 const Dashboard: React.FC = () => {
   return (
-    <BasePage>
+    <BasePage page="dashboard">
       <Container>
-        <Content />
+        <Content>Dashboard</Content>
       </Container>
     </BasePage>
   );

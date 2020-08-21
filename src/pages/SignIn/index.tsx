@@ -6,12 +6,11 @@ import * as Yup from 'yup';
 import { Link, useHistory } from 'react-router-dom';
 
 import SplashPage from '../../components/SplashPage';
-import Line from '../../components/Line';
 import logoImg from '../../assets/logo.svg';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import getValidationErrors from '../../utils/getValidationErrors';
-import { Container, Content } from './styles';
+import { Container, Content, EditedLine } from './styles';
 import { useAuth } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
 import Tooltip from '../../components/Tooltip';
@@ -91,7 +90,7 @@ const SignIn: React.FC = () => {
               <FiLogIn size={20} />
               Entrar
             </Button>
-            <Line>
+            <EditedLine>
               <Link to="/password-reset">Esqueci minha senha</Link>
               <Tooltip
                 title="Identifique-se"
@@ -99,7 +98,7 @@ const SignIn: React.FC = () => {
               >
                 <FiHelpCircle size={20} />
               </Tooltip>
-            </Line>
+            </EditedLine>
           </Form>
         </Content>
       </Container>

@@ -6,8 +6,8 @@ export const Container = styled.div`
   div {
     width: max-content;
     max-width: 300px;
-    background: #2a50e5;
-    padding: 8px;
+    background: #0091ff;
+    padding: 8px 16px;
     border-radius: 6px;
     opacity: 0;
     transition: opacity 0.4s;
@@ -21,18 +21,22 @@ export const Container = styled.div`
 
     strong {
       display: block;
-      margin-bottom: 8px;
     }
 
     span {
+      display: block;
       font-size: 13px;
       font-weight: 400;
+    }
+
+    strong + span {
+      margin-top: 8px;
     }
 
     &::before {
       content: '';
       border-style: solid;
-      border-color: #2a50e5 transparent;
+      border-color: #0091ff transparent;
       border-width: 6px 6px 0 6px;
       top: 100%;
       position: absolute;

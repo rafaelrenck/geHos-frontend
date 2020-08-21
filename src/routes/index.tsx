@@ -8,14 +8,18 @@ import PasswordReset from '../pages/PasswordReset';
 import PasswordUpdate from '../pages/PasswordUpdate';
 
 import Dashboard from '../pages/Dashboard';
+import Finance from '../pages/Finance';
+import Admin from '../pages/Admin';
 
 const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={SignIn} />
     <Route path="/password-reset" component={PasswordReset} />
 
-    <Route path="/dashboard" component={Dashboard} isPrivate />
     <Route path="/password-update" component={PasswordUpdate} isPrivate />
+    <Route path="/dashboard" component={Dashboard} isPrivate />
+    <Route path="/finance" component={Finance} isPrivate />
+    <Route path="/admin" component={Admin} isPrivate />
   </Switch>
 );
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { Container } from './styles';
 
 interface TooltipProps {
-  title: string;
+  title?: string;
   className?: string;
   message?: string;
 }
@@ -18,7 +18,7 @@ const Tooltip: React.FC<TooltipProps> = ({
     <Container className={className}>
       <div>
         <strong>{title}</strong>
-        <span>{message}</span>
+        {message && <span>{message}</span>}
       </div>
       {children}
     </Container>

@@ -67,7 +67,7 @@ export const Error = styled(Tooltip)`
     margin-right: 0;
   }
 
-  span {
+  div {
     background-color: #c53030;
     color: #fff;
 

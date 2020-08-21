@@ -11,92 +11,87 @@ export const Navbar = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  padding: 24px 0 24px 0;
+  margin-right: 64px;
 `;
 
 export const Menu = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 16px 64px 0 0;
+  width: 70px;
 
   img {
-    height: 50px;
-    margin-bottom: 64px;
+    width: 30px;
+    margin: 0 0 48px 0;
   }
 
   > ul {
     list-style: none;
 
-    > li {
-      padding: 20px 32px;
-      border-left: 3px solid #353852;
+    li {
+      display: flex;
+      align-items: center;
+      padding: 16px 0;
+      border-left: 3px solid transparent;
+      position: relative;
 
-      > ul {
-        list-style: none;
-        display: none;
-
-        > li {
-          padding: 20px 0 0 16px;
-          font-size: 12px;
-          color: rgba(255, 255, 255, 0.5);
-        }
+      a {
+        color: #7b7d8a;
       }
-    }
 
-    > li.active {
-      background: rgba(0, 0, 0, 0.16);
-      border-left: 3px solid #f7f8fc;
+      a.active {
+        color: #00cd69;
+      }
 
-      > ul {
-        display: block;
+      a.active::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -34px;
+        height: 50px;
+        width: 12px;
+        background: #00cd69;
+        border-radius: 12px;
       }
     }
   }
 `;
 
 export const Profile = styled.div`
-  background: rgba(0, 0, 0, 0.16);
-  border-radius: 23px;
-  height: 46px;
-  padding: 0 8px;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 8px;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-
-    strong {
-      color: #00a3d9;
-    }
-
-    span {
-      font-family: 'Mukta';
-      font-size: 11px;
-      font-weight: 300;
-    }
-  }
+  justify-content: flex-end;
 
   button {
     background: transparent;
     border: 0;
-    color: #fff;
-    margin-left: 32px;
+    color: #7b7d8a;
+    padding: 16px 0;
     transition: color 0.2s;
 
     &:hover {
-      color: #00a3d9;
+      color: #00cd69;
     }
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 16px 0 8px 0;
+  }
+
+  strong {
+    font-family: 'Montserrat';
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
   }
 `;
 
