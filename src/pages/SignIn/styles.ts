@@ -46,7 +46,7 @@ export const Content = styled.div`
       font-size: 28px;
     }
 
-    button {
+    > button {
       margin-bottom: 24px;
     }
 
@@ -72,4 +72,24 @@ export const Content = styled.div`
 
 export const EditedLine = styled(Line)`
   padding: 0 18px;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: color 0.2s;
+    line-height: 20px;
+    border: 0;
+    background: transparent;
+    margin-bottom: 0;
+
+    > svg {
+      margin: 0 4px;
+    }
+
+    &:hover {
+      color: ${shade(0.2, '#fff')};
+    }
+  }
 `;

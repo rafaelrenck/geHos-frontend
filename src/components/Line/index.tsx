@@ -2,6 +2,12 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const Line: React.FC = ({ children }) => <Container>{children}</Container>;
+interface LineProps {
+  className?: string;
+}
+
+const Line: React.FC<LineProps> = ({ className = '', children }) => {
+  return <Container className={className}>{children}</Container>;
+};
 
 export default Line;

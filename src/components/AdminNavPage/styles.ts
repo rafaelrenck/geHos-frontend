@@ -96,5 +96,6 @@ export const Profile = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  margin: 24px;
+  flex: 1;
+  display: flex;
 `;

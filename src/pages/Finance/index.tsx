@@ -1,15 +1,15 @@
 import React from 'react';
 
-import BasePage from '../../components/BasePage';
+import MainNavPage from '../../components/MainNavPage';
 import { Container, Content } from '../Dashboard/styles';
 
 const Finance: React.FC = () => {
   return (
-    <BasePage page="finance">
+    <MainNavPage>
       <Container>
         <Content>Módulo Financeiro</Content>
       </Container>
-    </BasePage>
+    </MainNavPage>
   );
 };
 

@@ -12,15 +12,13 @@ import * as Yup from 'yup';
 import { Link, useHistory } from 'react-router-dom';
 
 import SplashPage from '../../components/SplashPage';
-import Line from '../../components/Line';
 import logoImg from '../../assets/logo.svg';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import getValidationErrors from '../../utils/getValidationErrors';
-import { Container, Content } from '../SignIn/styles';
+import { Container, Content, EditedLine } from '../SignIn/styles';
 import { useToast } from '../../hooks/toast';
 import api from '../../services/api';
-
 import Tooltip from '../../components/Tooltip';
 
 interface PasswordResetFormData {
@@ -96,7 +94,7 @@ const PasswordReset: React.FC = () => {
         <Content>
           <img src={logoImg} alt="geHos" />
           <Form ref={formRef} onSubmit={handleSubmit}>
-            <h1>Redefinição de senha</h1>
+            <h1>Redefinição da senha</h1>
             <Input
               name="username"
               icon={FiUser}
@@ -113,7 +111,7 @@ const PasswordReset: React.FC = () => {
               <FiSend size={20} />
               Enviar
             </Button>
-            <Line>
+            <EditedLine>
               <Link to="/">
                 <FiArrowLeft size={20} />
                 Voltar para a página de Login
@@ -124,7 +122,7 @@ const PasswordReset: React.FC = () => {
               >
                 <FiHelpCircle size={20} />
               </Tooltip>
-            </Line>
+            </EditedLine>
           </Form>
         </Content>
       </Container>

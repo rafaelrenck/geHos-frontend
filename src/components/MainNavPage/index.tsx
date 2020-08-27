@@ -2,7 +2,7 @@ import React from 'react';
 
 import { FiPower, FiClipboard } from 'react-icons/fi';
 import { RiMoneyDollarCircleLine, RiHome2Line } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Container, Navbar, Menu, Profile, ContentContainer } from './styles';
 import logoImg from '../../assets/logomark.svg';
 
@@ -10,11 +10,7 @@ import { useAuth } from '../../hooks/auth';
 
 import avatarImg from '../../assets/avatar.jpg';
 
-interface BasePageProps {
-  page?: string;
-}
-
-const PageForm: React.FC<BasePageProps> = ({ children, page }) => {
+const MainNavPage: React.FC = ({ children }) => {
   const { signOut, user } = useAuth();
   return (
     <Container>
@@ -23,25 +19,19 @@ const PageForm: React.FC<BasePageProps> = ({ children, page }) => {
           <img src={logoImg} alt="geHos" />
           <ul>
             <li>
-              <Link
-                to="/dashboard"
-                className={page === 'dashboard' ? 'active' : ''}
-              >
+              <NavLink to="/dashboard" activeClassName="active">
                 <RiHome2Line size={20} />
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/finance"
-                className={page === 'finance' ? 'active' : ''}
-              >
+              <NavLink to="/finance" activeClassName="active">
                 <RiMoneyDollarCircleLine size={20} />
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/admin" className={page === 'admin' ? 'active' : ''}>
+              <NavLink to="/admin" activeClassName="active">
                 <FiClipboard size={20} />
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </Menu>
@@ -61,4 +51,4 @@ const PageForm: React.FC<BasePageProps> = ({ children, page }) => {
   );
 };
 
-export default PageForm;
+export default MainNavPage;

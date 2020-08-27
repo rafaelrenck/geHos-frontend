@@ -1,15 +1,15 @@
 import React from 'react';
 
-import BasePage from '../../components/BasePage';
+import MainNavPage from '../../components/MainNavPage';
 import { Container, Content } from './styles';
 
 const Dashboard: React.FC = () => {
   return (
-    <BasePage page="dashboard">
+    <MainNavPage>
       <Container>
-        <Content>Dashboard</Content>
+        <Content />
       </Container>
-    </BasePage>
+    </MainNavPage>
   );
 };
 

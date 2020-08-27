@@ -1,15 +1,13 @@
 import React from 'react';
 
-import BasePage from '../../components/BasePage';
-import { Container, Content } from '../Dashboard/styles';
+import MainNavPage from '../../components/MainNavPage';
+import AdminNavPage from '../../components/AdminNavPage';
 
 const Admin: React.FC = () => {
   return (
-    <BasePage page="admin">
-      <Container>
-        <Content>Painel do Administrador</Content>
-      </Container>
-    </BasePage>
+    <MainNavPage>
+      <AdminNavPage>Root Admin</AdminNavPage>
+    </MainNavPage>
   );
 };
 

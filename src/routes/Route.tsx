@@ -23,6 +23,17 @@ const Route: React.FC<RouteProps> = ({
     <ReactDOMRoute
       {...rest}
       render={({ location }) => {
+        if (
+          user &&
+          user.password_is_temporary === true &&
+          location.pathname !== '/password-update'
+        ) {
+          return (
+            <Redirect
+              to={{ pathname: '/password-update', state: { from: location } }}
+            />
+          );
+        }
         return isPrivate === !!user ? (
           <Component />
         ) : (
